@@ -5,14 +5,14 @@ const {
     createUser,
     updateUser,
     deleteUser,
-} = require('./userRoutes');
+} = require('../../controllers/userConrollers');
 
 // api/users
 router.route('/').get(getUsers).post(createUser);
 
 // /api/users/:userId
 router
-    .route('/:userID')
+    .route('/:userId')
     .get(getSingleUser)
     .put(updateUser)
     .delete(deleteUser)

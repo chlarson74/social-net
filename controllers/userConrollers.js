@@ -1,4 +1,4 @@
-const { User, Thought } = require('../models');
+const { User, Thought } = require('../model');
 
 module.exports = {
     // * `GET` all users
@@ -47,7 +47,7 @@ module.exports = {
     // * `PUT` to update a user by its `_id`
     async updateUser(req, res) {
         try {
-            const user = await user.findOneAndUpdate(
+            const user = await User.findOneAndUpdate(
                 { _id: req.params.userId },
                 { $set: req.body },
                 { runValidators: true, new: true }//research this
@@ -56,7 +56,7 @@ module.exports = {
                 return res.status(404).json({ message: 'No user with this id.' });
             };
             res.json(user);
-        }   catch (err) {
+        }   catch (err) {console.log(err);
             res.status(500).json(err);
         }
     },
@@ -64,7 +64,7 @@ module.exports = {
     // * `DELETE` to remove user by its `_id`
     async deleteUser(req, res) {
         try {
-            const user = await user.findOneAndDelete({ _id: req.params.userId });
+            const user = await User.findOneAndDelete({ _id: req.params.userId });
 
             if (!user) {
                 return res.status(404).json({ message: 'No user with that id.' });
@@ -85,3 +85,11 @@ module.exports = {
 // * `DELETE` to remove a friend from a user's friend list
 
 }
+
+
+
+
+
+
+
+//second set of routes -- user and controllers -- thought routes and thougth controls
