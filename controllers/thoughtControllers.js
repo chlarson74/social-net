@@ -1,11 +1,11 @@
 const { ObjectId } = require('mongoose').Types;
-const { Thought, User } = require('../models');
+const { Thought, User } = require('../model');
 
 module.exports = {
 // * `GET` to get all thoughts
-async getthoughts(req, res) {
+async getThoughts(req, res) {
     try {
-      const thoughts = await thought.find();
+      const thought = await Thought.find();
       const thoughtObj = {
         // ```json
         // // example data
@@ -49,6 +49,7 @@ async createThought(req, res) {
       res.json(thought);
     } catch (err) {
       res.status(500).json(err);
+      console.log(err);
     }
   },
 
@@ -56,7 +57,7 @@ async createThought(req, res) {
 // * `PUT` to update a thought by its `_id`
 async updateThought(req, res) {
     try {
-        const thought = await thought.findOneAndUpdate(
+        const thought = await Thought.findOneAndUpdate(
             { _id: req.params.userId },
             { $set: req.body },
             { runValidators: true, new: true }//research this
@@ -98,12 +99,51 @@ async deleteThought(req, res) {
       res.status(500).json(err);
     }
   },
-}
-
-// ---
+  // ---
 
 // **`/api/thoughts/:thoughtId/reactions`**
 
 // * `POST` to create a reaction stored in a single thought's `reactions` array field
+  // * `POST` to add a new reactions to a user's reactions list
+async createReactions(req, res) {
+  try {
+    const thought = await Thought.findById(req.params.thoughtId);
+    if (!thought) {
+      return res.status(404).json({ message: 'thought not found' });
+    }
 
-// * `DELETE` to pull and remove a reaction by the reaction's `reactionId` value
+const reactionsId = req.params.reactionsId
+
+    // Push the new reactions to the reactions array of the user
+    thought.reactions.push(req.body);
+    await thought.save();
+
+    return res.status(201).json({ message: 'reactions created' });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json(err);
+  }
+},
+// * `DELETE` to remove a reactions from a user's reactions list
+async deleteReactions(req, res) {
+  try {
+    const thought = await Thought.findByIdAndUpdate(req.params.thoughtId, {
+      $pull:{reactionss:req.params.reactionsId}
+    },
+    {
+      new:true
+    });
+    if (!thought) {
+      return res.status(404).json({ message: 'thought not found' });
+    }
+      await user.save();
+  
+    return res.json({ message: 'reactions removed' });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json(err);
+  }
+},
+}
+
+

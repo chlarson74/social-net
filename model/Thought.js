@@ -61,7 +61,7 @@ const thoughtSchema = new Schema(
 );
 
 thoughtSchema.virtual('reactionCount').get(function(){
-    return this.reaction.length //gets information of reaction length, computed properties, isn't stored in db
+    return this.reactions.length //gets information of reaction length, computed properties, isn't stored in db
 });
 
 // Initialize the thought model

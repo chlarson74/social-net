@@ -75,15 +75,62 @@ module.exports = {
         }   catch (err) {
             res.status(500).json(err);
         }
-    }
+    },
 
 
 // **`/api/users/:userId/friends/:friendId`**  // ask tutor about this
 
+
+
 // * `POST` to add a new friend to a user's friend list
+async createFriend(req, res) {
+    try {
+      const user = await User.findById(req.params.userId);
+      if (!user) {
+        return res.status(404).json({ message: 'user not found' });
+      }
 
+const friendId = req.params.friendId
+
+      // Push the new friend to the friends array of the user
+      user.friends.push(friendId);
+      await user.save();
+
+      return res.status(201).json({ message: 'friend created' });
+    } catch (err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+  },
 // * `DELETE` to remove a friend from a user's friend list
+  async deleteFriend(req, res) {
+    try {
+      const user = await User.findByIdAndUpdate(req.params.userId, {
+        $pull:{friends:req.params.friendId}
+      },
+      {
+        new:true
+      });
+      if (!user) {
+        return res.status(404).json({ message: 'user not found' });
+      }
+// console.log(user.friends);
+//       // Find the index of the friend with the given friendId
+//       const friendIndex = user.friends.findIndex(friend => friend._Id.toString() === req.params.friendId);
+//       if (friendIndex === -1) {
+//         return res.status(404).json({ message: 'friend not found' });
+//       }
 
+//       // Remove the friend
+//       user.friends.splice(friendIndex, 1);
+//       await user.save();
+    
+      return res.json({ message: 'friend removed' });
+    } catch (err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+  },
 }
 
 
@@ -92,4 +139,4 @@ module.exports = {
 
 
 
-//second set of routes -- user and controllers -- thought routes and thougth controls
+//second set of routes -- user and controllers -- thought routes and thought controllers
