@@ -26,65 +26,71 @@ Work completed:
 Use Insomnia App to test the functionality. 
 
 
-## Walkthrough Gifs
-The following gif shows the start of the application.
-
-1 ***************
+## Walkthrough Videos
+The following video shows the start of the application.
 
 https://github.com/chlarson74/social-net/assets/137223285/1ce079a3-4c33-4444-9528-b8ecf2128117
 
 
-
-The following gifs demonstrate GET routes for all users and all thoughts being tested in Insomnia. 
+The following video demonstrate GET routes for all users and all thoughts being tested in Insomnia. 
 
 USERS
 
-2 ***************
+https://github.com/chlarson74/social-net/assets/137223285/96a43d0e-0c30-4ed6-9a65-e3a02f7abb44
+
 
 THOUGHTS
 
-8 ***************
+https://github.com/chlarson74/social-net/assets/137223285/ffc288f5-0fd5-40c4-996d-7badd30ad8df
 
 
 The following gifs demonstrate GET routes for a single user and a single thought being tested in Insomnia.
 
 USERS
 
-3 ***************
+https://github.com/chlarson74/social-net/assets/137223285/9f53ec8c-e462-40a9-8444-d2a46a8dd5d2
+
 
 THOUGHTS
 
-7 ***************
+https://github.com/chlarson74/social-net/assets/137223285/e892124b-fb49-41d5-af41-5a54464adc9b
+
 
 The following gifs demonstrate POST, PUT, and DELETE routes for users and thoughts being tested in Insomnia.
 
 USERS
 
-4 ***************
+https://github.com/chlarson74/social-net/assets/137223285/6125b3cd-92f5-4162-a1fc-c7ea2c86acaa
+
 
 THOUGHTS
 
-9 ***************
+https://github.com/chlarson74/social-net/assets/137223285/4238bb7b-cd5e-485f-9c3b-c671edbd18dc
+
 
 The following gifs demonstrate POST and DELETE routes for a user’s friend list being tested in Insomnia.
 
 POST
 
-5 ***************
+https://github.com/chlarson74/social-net/assets/137223285/e081bb43-7ffb-4e42-82ab-ad767f1b436d
+
 
 DELETE
 
-6 ***************
+https://github.com/chlarson74/social-net/assets/137223285/65a5df0b-746a-44bd-b10d-1c327bf0081c
+
 
 The following gifs demonstrate POST and DELETE routes for reactions to thoughts being tested in Insomnia.
 
 POST
 
-10 ***************
+https://github.com/chlarson74/social-net/assets/137223285/6c487f51-6e00-40e4-b1b0-c33ab7e81a29
+
 
 DELETE
 
-11 ***************
+https://github.com/chlarson74/social-net/assets/137223285/078665dc-7f69-48ae-8f45-00aecbd5f8d7
+
 
 
 ## Learning Points 
