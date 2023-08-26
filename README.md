@@ -31,6 +31,10 @@ The following gif shows the start of the application.
 
 1 ***************
 
+https://github.com/chlarson74/social-net/assets/137223285/1ce079a3-4c33-4444-9528-b8ecf2128117
+
+
+
 The following gifs demonstrate GET routes for all users and all thoughts being tested in Insomnia. 
 
 USERS
