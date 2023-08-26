@@ -44,7 +44,7 @@ THOUGHTS
 https://github.com/chlarson74/social-net/assets/137223285/ffc288f5-0fd5-40c4-996d-7badd30ad8df
 
 
-The following gifs demonstrate GET routes for a single user and a single thought being tested in Insomnia.
+The following videos demonstrate GET routes for a single user and a single thought being tested in Insomnia.
 
 USERS
 
@@ -56,7 +56,7 @@ THOUGHTS
 https://github.com/chlarson74/social-net/assets/137223285/e892124b-fb49-41d5-af41-5a54464adc9b
 
 
-The following gifs demonstrate POST, PUT, and DELETE routes for users and thoughts being tested in Insomnia.
+The following videos demonstrate POST, PUT, and DELETE routes for users and thoughts being tested in Insomnia.
 
 USERS
 
@@ -68,7 +68,7 @@ THOUGHTS
 https://github.com/chlarson74/social-net/assets/137223285/4238bb7b-cd5e-485f-9c3b-c671edbd18dc
 
 
-The following gifs demonstrate POST and DELETE routes for a user’s friend list being tested in Insomnia.
+The following videos demonstrate POST and DELETE routes for a user’s friend list being tested in Insomnia.
 
 POST
 
@@ -80,7 +80,7 @@ DELETE
 https://github.com/chlarson74/social-net/assets/137223285/65a5df0b-746a-44bd-b10d-1c327bf0081c
 
 
-The following gifs demonstrate POST and DELETE routes for reactions to thoughts being tested in Insomnia.
+The following videos demonstrate POST and DELETE routes for reactions to thoughts being tested in Insomnia.
 
 POST
 
