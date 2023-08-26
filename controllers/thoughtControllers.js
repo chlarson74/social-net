@@ -4,19 +4,36 @@ const { Thought, User } = require('../model');
 module.exports = {
 // * `GET` to get all thoughts
 async getThoughts(req, res) {
+  //   try {
+  //     const thought = await Thought.find();
+  //     const thoughtObj = {
+  //       // ```json
+  //       // // example data
+  //       // {
+  //       //   "thoughtText": "Here's a cool thought...",
+  //       //   "username": "lernantino",
+  //       //   "userId": "5edff358a0fcb779aa7b118b"
+  //       // }
+  //       // ```
+  //     };
+  //     return res.json(thoughtObj);
+  //   } catch (err) {
+  //     console.log(err);
+  //     return res.status(500).json(err);
+  //   }
+  // },
     try {
-      const thought = await Thought.find();
-      const thoughtObj = {
-        // ```json
-        // // example data
-        // {
-        //   "thoughtText": "Here's a cool thought...",
-        //   "username": "lernantino",
-        //   "userId": "5edff358a0fcb779aa7b118b"
-        // }
-        // ```
-      };
-      return res.json(thoughtObj);
+      const thoughts = await Thought.find(); // Fetch thoughts from the database
+      return res.json(thoughts); // Return the fetched thoughts
+    } catch (err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+  },
+  async getThoughts(req, res) {
+    try {
+      const thoughts = await Thought.find(); // Fetch thoughts from the database
+      return res.json(thoughts); // Return the fetched thoughts
     } catch (err) {
       console.log(err);
       return res.status(500).json(err);
@@ -128,7 +145,7 @@ const reactionsId = req.params.reactionsId
 async deleteReactions(req, res) {
   try {
     const thought = await Thought.findByIdAndUpdate(req.params.thoughtId, {
-      $pull:{reactionss:req.params.reactionsId}
+      $pull:{reactions:req.params.reactionsId}
     },
     {
       new:true
@@ -136,12 +153,12 @@ async deleteReactions(req, res) {
     if (!thought) {
       return res.status(404).json({ message: 'thought not found' });
     }
-      await user.save();
+      // await thought.save();
   
-    return res.json({ message: 'reactions removed' });
+    return res.json({ message: 'reaction removed' });
   } catch (err) {
-    console.log(err);
     return res.status(500).json(err);
+    console.log(err);
   }
 },
 }

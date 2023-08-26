@@ -1,12 +1,16 @@
 // **`/api/thoughts`**
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 
 const reactionSchema = new Schema(
     {
+        // reactionId: {
+        // type: Schema.Types.ObjectId, // Use Mongoose's ObjectId data type
+        // default: ()=> new Types.ObjectId() // Default value is set to a new ObjectId
+        // },
         reactionId: {
-        type: Schema.Types.ObjectId, // Use Mongoose's ObjectId data type
-        default: ()=> new Types.ObjectId() // Default value is set to a new ObjectId
-        },
+            type: Types.ObjectId, // Use Types.ObjectId, not Schema.Types.ObjectId
+            default: () => new Types.ObjectId(),
+          },      
         reactionBody: {
             type: String,
             require: true,
