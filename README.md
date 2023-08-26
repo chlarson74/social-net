@@ -1,4 +1,4 @@
-# Blogging App
+# Social Network App
 
 ## Technology Used 
 
